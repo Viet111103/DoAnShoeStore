@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('email',200)->unique();
             $table->string('address',255)->nullable();
             $table->text('image')->nullable();
-            $table->string('password',10);
-            $table->boolean('role');
+            $table->string('password');
+            $table->integer('token')->nullable();
+            $table->boolean('role')->default(false);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
